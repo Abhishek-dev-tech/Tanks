@@ -15,6 +15,9 @@ public:
 	// Sets default values for this pawn's properties
 	ABase();
 
+	UFUNCTION()
+	void HandleActorDied();
+
 protected:
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
@@ -48,4 +51,7 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	USceneComponent* projectileSpawnPoint;
+
+	UFUNCTION()
+	void SetScaleSmoothly(FVector value, float deltaTime);
 };

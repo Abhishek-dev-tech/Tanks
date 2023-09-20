@@ -14,4 +14,13 @@ class TANKS_API ATanksGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+	UFUNCTION()
+	void ActorDied(AActor* actor);
+
+protected:
+	virtual void BeginPlay() override;
+
+private:
+	class APlayerTank *playerTank;
 };

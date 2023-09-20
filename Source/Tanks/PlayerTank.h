@@ -23,6 +23,10 @@ public:
 	// Sets default values for this pawn's properties
 	APlayerTank();
 
+	void HandleActorDied();
+
+	bool playerDead;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -33,6 +37,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UFUNCTION()
+	APlayerController *GetTankPlayerController() const { return tankPlayerController; }
 
 private:
 
@@ -60,7 +67,7 @@ private:
 	UFUNCTION()
 	void ResetInputValues(const FInputActionValue &value);
 
-	APlayerController *playerController;
+	APlayerController *tankPlayerController;
 
 	FVector moveVector;
 };

@@ -22,9 +22,12 @@ protected:
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Health")
-	float maxHealth;
-	
+	float maxHealth = 100.f;
+
+	UPROPERTY(VisibleAnywhere, Category = "Health")
 	float health;
+
+	class ATanksGameModeBase *tankGameMode;
 
 	UFUNCTION()
 	void TakeDamage(AActor* damagedActor, float damage, const UDamageType* damageType, AController* instigator, AActor* damageCauser);

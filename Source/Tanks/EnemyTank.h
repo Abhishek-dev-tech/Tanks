@@ -18,6 +18,8 @@ class TANKS_API AEnemyTank : public ABase
 public:	
 	virtual void Tick(float DeltaTime) override;
 
+	void HandleActorDied();
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -27,11 +29,17 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float distance;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float fireRate = 2.f;
+
 	UFUNCTION()
 	void Move(const FVector target, float deltaTime);
 
 	UFUNCTION()
 	void Rotate(const FVector target, float deltaTime);
+
+	UFUNCTION()
+	void Fire_Bind();
 
 	bool inRange;
 

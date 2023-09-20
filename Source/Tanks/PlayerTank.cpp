@@ -32,7 +32,7 @@ void APlayerTank::BeginPlay()
 
 	subSystem->AddMappingContext(playerMappingContext, 0);
 
-	playerController = _playerController;
+	tankPlayerController = _playerController;
 }
 
 
@@ -41,10 +41,10 @@ void APlayerTank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if(playerController)
+	if(tankPlayerController)
 	{
 		FHitResult hitResult;
-		playerController->GetHitResultUnderCursor(
+		tankPlayerController->GetHitResultUnderCursor(
 			ECollisionChannel::ECC_Visibility,
 			false,
 			hitResult
@@ -93,4 +93,14 @@ void APlayerTank::Rotate()
 void APlayerTank::ResetInputValues(const FInputActionValue &value)
 {
 	moveVector = FVector::ZeroVector;
+}
+
+void APlayerTank::HandleActorDied()
+{
+	Super::HandleActorDied();
+
+	SetActorHiddenInGame(true);
+	SetActorTickEnabled(false);
+
+	playerDead = true;
 }

@@ -32,6 +32,7 @@ void ABase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	SetScaleSmoothly(FVector(1, 1, 1), DeltaTime);
 }
 
 void ABase::RotateTurret(const FVector target, float deltaTime)
@@ -54,7 +55,24 @@ void ABase::RotateTurret(const FVector target, float deltaTime)
 
 void ABase::Fire()
 {
+	turretMesh->SetWorldScale3D(FVector(1.175f, 1.175f, 1.f));
+
 	AProjectile *tempProjectile = GetWorld()->SpawnActor<AProjectile>(projectile, projectileSpawnPoint->GetComponentLocation(), projectileSpawnPoint->GetComponentRotation());
 
 	tempProjectile->SetOwner(this);
+}
+
+void ABase::SetScaleSmoothly(FVector value, float deltaTime)
+{
+		turretMesh->SetWorldScale3D(FMath::VInterpTo(
+		turretMesh->GetComponentScale(),
+		value,
+		deltaTime,
+		15.f
+	));
+}
+
+void ABase::HandleActorDied()
+{
+	
 }

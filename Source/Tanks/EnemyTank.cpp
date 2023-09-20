@@ -12,7 +12,7 @@ void AEnemyTank::BeginPlay()
 	
     playerTank = Cast<APlayerTank>(UGameplayStatics::GetPlayerPawn(this, 0));
 
-	
+	GetWorldTimerManager().SetTimer(fireTimerHandle, this, &AEnemyTank::Fire_Bind, fireRate, true);
 }
 
 void AEnemyTank::Tick(float DeltaTime)
@@ -60,4 +60,18 @@ void AEnemyTank::Rotate(const FVector target, float deltaTime)
 		deltaTime,
 		20.f
 	));
+}
+
+void AEnemyTank::Fire_Bind()
+{
+	if(inRange && !playerTank->playerDead)
+	{
+		Fire();
+	}
+}
+
+void AEnemyTank::HandleActorDied()
+{
+	Super::HandleActorDied();
+	Destroy();
 }

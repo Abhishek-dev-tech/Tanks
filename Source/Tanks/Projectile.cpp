@@ -37,7 +37,7 @@ void AProjectile::OnHit(UPrimitiveComponent *hitComp, AActor *otherActor, UPrimi
 {
 	AActor *owner = GetOwner();
 
-	if(owner == nullptr)
+	if(owner == nullptr && otherActor == this && otherActor == owner)
 	{
 		Destroy();
 		return;
@@ -45,7 +45,7 @@ void AProjectile::OnHit(UPrimitiveComponent *hitComp, AActor *otherActor, UPrimi
 
 	AController *instigatorController = owner->GetInstigatorController();
 
-	if(otherActor->ActorHasTag("Enemy") && otherActor != this && otherActor != owner)
+	if(otherActor->ActorHasTag("Enemy") || otherActor->ActorHasTag("Player"))
 	{
 		UGameplayStatics::ApplyDamage(otherActor,
 		damageAmount,
