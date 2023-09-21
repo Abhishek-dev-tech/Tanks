@@ -5,32 +5,25 @@
 #include "CoreMinimal.h"
 #include "Base.h"
 #include "EnemyBase.h"
-#include "EnemyTank.generated.h"
+#include "EnemyTower.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class TANKS_API AEnemyTank : public AEnemyBase
+class TANKS_API AEnemyTower : public AEnemyBase
 {
 	GENERATED_BODY()
-
-public:	
+	
+public:
 	virtual void Tick(float DeltaTime) override;
 
 protected:
 	virtual void BeginPlay() override;
 
 private:
-
 	UPROPERTY(EditAnywhere, Category = "Movement")
-	float followDistance;
-
-	UFUNCTION()
-	void Move(const FVector target, float deltaTime);
-
-	UFUNCTION()
-	void Rotate(const FVector target, float deltaTime);
+	float attackDistance;
 
 	void Fire();
 };

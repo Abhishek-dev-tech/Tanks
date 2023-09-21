@@ -38,7 +38,6 @@ void ABase::Tick(float DeltaTime)
 void ABase::RotateTurret(const FVector target, float deltaTime)
 {
 	FVector direction = target - turretMesh->GetComponentLocation();
-	//direction.Normalize();
 
 	FRotator deltaRotation = direction.Rotation();
 
@@ -64,7 +63,7 @@ void ABase::Fire()
 
 void ABase::SetScaleSmoothly(FVector value, float deltaTime)
 {
-		turretMesh->SetWorldScale3D(FMath::VInterpTo(
+	turretMesh->SetWorldScale3D(FMath::VInterpTo(
 		turretMesh->GetComponentScale(),
 		value,
 		deltaTime,

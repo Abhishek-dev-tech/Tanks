@@ -23,9 +23,6 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float speed;
 
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float turnRate;
-
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TSubclassOf<class AProjectile> projectile;
 

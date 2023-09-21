@@ -67,6 +67,9 @@ private:
 	UFUNCTION()
 	void ResetInputValues(const FInputActionValue &value);
 
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	float turnRate;
+
 	APlayerController *tankPlayerController;
 
 	FVector moveVector;

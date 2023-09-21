@@ -3,45 +3,39 @@
 
 #include "EnemyTank.h"
 #include "PlayerTank.h"
-#include "Kismet/GameplayStatics.h"
 #include "TimerManager.h"
 
 void AEnemyTank::BeginPlay()
 {
 	Super::BeginPlay();
-	
-    playerTank = Cast<APlayerTank>(UGameplayStatics::GetPlayerPawn(this, 0));
 
-	GetWorldTimerManager().SetTimer(fireTimerHandle, this, &AEnemyTank::Fire_Bind, fireRate, true);
+	GetWorldTimerManager().SetTimer(fireTimerHandle, this, &AEnemyTank::Fire, fireRate, true);
 }
 
 void AEnemyTank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-    Move(playerTank->GetActorLocation(), DeltaTime);
+	FVector target = playerTank->GetActorLocation();
+
+	Move(target, DeltaTime);
 }
 
 void AEnemyTank::Move(const FVector target, float deltaTime)
 {
-    RotateTurret(target, deltaTime);
+	RotateTurret(playerTank->GetActorLocation(), deltaTime);
 
-    if(FVector::Dist(target, GetActorLocation()) < distance)
-	{
-		inRange = true;
+	if (TargetInRange(followDistance))
 		return;
-	}
-
-	inRange = false;
-
+	
 	FVector direction = target - GetActorLocation();
 	direction.Normalize();
-	
+
 	FVector deltaLocation = GetActorLocation() + direction * speed * deltaTime;
 
 	SetActorLocation(deltaLocation);
 
-    Rotate(target, deltaTime);
+	Rotate(target, deltaTime);
 }
 
 void AEnemyTank::Rotate(const FVector target, float deltaTime)
@@ -62,16 +56,10 @@ void AEnemyTank::Rotate(const FVector target, float deltaTime)
 	));
 }
 
-void AEnemyTank::Fire_Bind()
+void AEnemyTank::Fire()
 {
-	if(inRange && !playerTank->playerDead)
+	if (TargetInRange(followDistance) && !playerTank->playerDead)
 	{
-		Fire();
+		Super::Fire();
 	}
-}
-
-void AEnemyTank::HandleActorDied()
-{
-	Super::HandleActorDied();
-	Destroy();
 }

@@ -3,7 +3,7 @@
 
 #include "TanksGameModeBase.h"
 #include "PlayerTank.h"
-#include "EnemyTank.h"
+#include "EnemyBase.h"
 #include "Kismet/GameplayStatics.h"
 
 void ATanksGameModeBase::BeginPlay()
@@ -21,8 +21,8 @@ void ATanksGameModeBase::ActorDied(AActor* actor)
         playerTank->DisableInput(playerTank->GetTankPlayerController());
         playerTank->GetTankPlayerController()->bShowMouseCursor = false;
     }
-    else if(AEnemyTank* enemyTank = Cast<AEnemyTank>(actor))
+    else if(AEnemyBase* enemy = Cast<AEnemyBase>(actor))
     {
-        enemyTank->HandleActorDied();
+        enemy->HandleActorDied();
     }
 }
