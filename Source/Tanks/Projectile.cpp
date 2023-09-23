@@ -5,6 +5,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/DamageType.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -14,6 +15,9 @@ AProjectile::AProjectile()
 
 	projectileMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Projectile Mesh"));
 	RootComponent = projectileMesh;
+
+	projectileTrail = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Projectile Trail"));
+	projectileTrail->SetupAttachment(projectileMesh);
 
 	projectileComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
 }
@@ -54,6 +58,9 @@ void AProjectile::OnHit(UPrimitiveComponent *hitComp, AActor *otherActor, UPrimi
 		UDamageType::StaticClass());
 	}
 
+	GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(hitCameraShake);
+
+	UGameplayStatics::SpawnEmitterAtLocation(this, hitParticle, GetActorLocation(), GetActorRotation());
 	Destroy();
 }
 

@@ -3,6 +3,8 @@
 
 #include "Base.h"
 #include "Projectile.h"
+#include "Components/BoxComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ABase::ABase()
@@ -10,8 +12,11 @@ ABase::ABase()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	boxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Copmonent"));
+	RootComponent = boxComponent;
+
 	baseMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Base Mesh"));
-	RootComponent = baseMesh;
+	baseMesh->SetupAttachment(boxComponent);
 
 	turretMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Turret Mesh"));
 	turretMesh->SetupAttachment(baseMesh);
@@ -73,5 +78,6 @@ void ABase::SetScaleSmoothly(FVector value, float deltaTime)
 
 void ABase::HandleActorDied()
 {
-	
+	UGameplayStatics::SpawnEmitterAtLocation(this, deathParticle, GetActorLocation(), GetActorRotation());
+	GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(deathCameraShake);
 }

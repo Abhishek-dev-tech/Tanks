@@ -34,6 +34,15 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	class UProjectileMovementComponent *projectileComponent;
 
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	class UParticleSystem* hitParticle;
+
+	UPROPERTY(VisibleAnywhere, Category = "Effects")
+	class UParticleSystemComponent* projectileTrail;
+
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	TSubclassOf<class UCameraShakeBase> hitCameraShake;
+
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent *hitComp, AActor *otherActor, UPrimitiveComponent *otherComp, FVector normalImpluse, const FHitResult &hitResult);
 };

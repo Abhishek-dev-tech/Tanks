@@ -33,7 +33,7 @@ void AEnemyTank::Move(const FVector target, float deltaTime)
 
 	FVector deltaLocation = GetActorLocation() + direction * speed * deltaTime;
 
-	SetActorLocation(deltaLocation);
+	SetActorLocation(deltaLocation, true);
 
 	Rotate(target, deltaTime);
 }

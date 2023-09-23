@@ -6,6 +6,8 @@
 #include "GameFramework/Pawn.h"
 #include "Base.generated.h"
 
+class UBoxComponent;
+
 UCLASS()
 class TANKS_API ABase : public APawn
 {
@@ -41,6 +43,9 @@ public:
 
 private:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UBoxComponent* boxComponent;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
 	UStaticMeshComponent* baseMesh;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
@@ -48,6 +53,12 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	USceneComponent* projectileSpawnPoint;
+
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	class UParticleSystem* deathParticle;
+
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	TSubclassOf<class UCameraShakeBase> deathCameraShake;
 
 	UFUNCTION()
 	void SetScaleSmoothly(FVector value, float deltaTime);

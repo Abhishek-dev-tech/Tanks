@@ -76,7 +76,7 @@ void APlayerTank::Move(const FInputActionValue &value)
 		UGameplayStatics::GetWorldDeltaSeconds(this),
 		2.5f);
 
-	AddActorLocalOffset(FVector(moveVector.Y, 0, 0) * speed * UGameplayStatics::GetWorldDeltaSeconds(this));
+	AddActorLocalOffset(FVector(moveVector.Y, 0, 0) * speed * UGameplayStatics::GetWorldDeltaSeconds(this), true);
 
 	Rotate();
 }
