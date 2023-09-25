@@ -9,7 +9,6 @@ void AEnemyTower::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GetWorldTimerManager().SetTimer(fireTimerHandle, this, &AEnemyTower::Fire, fireRate, true);
 }
 
 void AEnemyTower::Tick(float DeltaTime)
@@ -19,13 +18,5 @@ void AEnemyTower::Tick(float DeltaTime)
 	if (TargetInRange(attackDistance))
 		RotateTurret(playerTank->GetActorLocation(), DeltaTime);
 	
-}
-
-void AEnemyTower::Fire()
-{
-	if (TargetInRange(attackDistance) && !playerTank->playerDead)
-	{
-		Super::Fire();
-	}
 }
 

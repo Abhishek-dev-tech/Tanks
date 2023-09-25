@@ -7,6 +7,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values
 APlayerTank::APlayerTank()
@@ -49,6 +50,8 @@ void APlayerTank::Tick(float DeltaTime)
 			false,
 			hitResult
 		);
+
+		DrawDebugSphere(GetWorld(), hitResult.ImpactPoint, 5, 8, FColor::Black, false, -1.f);
 
 		RotateTurret(hitResult.ImpactPoint, DeltaTime);
 	}

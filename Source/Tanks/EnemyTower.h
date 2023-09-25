@@ -20,10 +20,4 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
-private:
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float attackDistance;
-
-	void Fire();
 };

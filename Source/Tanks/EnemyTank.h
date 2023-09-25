@@ -23,14 +23,9 @@ protected:
 
 private:
 
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float followDistance;
-
 	UFUNCTION()
 	void Move(const FVector target, float deltaTime);
 
 	UFUNCTION()
 	void Rotate(const FVector target, float deltaTime);
-
-	void Fire();
 };

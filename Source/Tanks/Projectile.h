@@ -32,6 +32,9 @@ private:
 	UStaticMeshComponent* projectileMesh;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
+	class UPointLightComponent *pointLight;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
 	class UProjectileMovementComponent *projectileComponent;
 
 	UPROPERTY(EditAnywhere, Category = "Effects")

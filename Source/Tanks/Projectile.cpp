@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/DamageType.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "Components/PointLightComponent.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -16,8 +17,11 @@ AProjectile::AProjectile()
 	projectileMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Projectile Mesh"));
 	RootComponent = projectileMesh;
 
+	pointLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("Point Light"));
+	pointLight->SetupAttachment(projectileMesh);
+
 	projectileTrail = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Projectile Trail"));
-	projectileTrail->SetupAttachment(projectileMesh);
+	projectileTrail->SetupAttachment(pointLight);
 
 	projectileComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
 }

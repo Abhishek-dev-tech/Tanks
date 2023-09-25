@@ -10,6 +10,8 @@ void AEnemyBase::BeginPlay()
 	Super::BeginPlay();
 
 	playerTank = Cast<APlayerTank>(UGameplayStatics::GetPlayerPawn(this, 0));
+
+	GetWorldTimerManager().SetTimer(fireTimerHandle, this, &AEnemyBase::Fire, fireRate, true);
 }
 
 void AEnemyBase::Tick(float DeltaTime)
@@ -30,4 +32,12 @@ bool AEnemyBase::TargetInRange(float value)
 
 	return false;
 	
+}
+
+void AEnemyBase::Fire()
+{
+	if (TargetInRange(attackDistance) && !playerTank->playerDead)
+	{
+		Super::Fire();
+	}
 }

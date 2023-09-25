@@ -8,8 +8,6 @@
 void AEnemyTank::BeginPlay()
 {
 	Super::BeginPlay();
-
-	GetWorldTimerManager().SetTimer(fireTimerHandle, this, &AEnemyTank::Fire, fireRate, true);
 }
 
 void AEnemyTank::Tick(float DeltaTime)
@@ -25,7 +23,7 @@ void AEnemyTank::Move(const FVector target, float deltaTime)
 {
 	RotateTurret(playerTank->GetActorLocation(), deltaTime);
 
-	if (TargetInRange(followDistance))
+	if (TargetInRange(attackDistance))
 		return;
 	
 	FVector direction = target - GetActorLocation();
@@ -54,12 +52,4 @@ void AEnemyTank::Rotate(const FVector target, float deltaTime)
 		deltaTime,
 		20.f
 	));
-}
-
-void AEnemyTank::Fire()
-{
-	if (TargetInRange(followDistance) && !playerTank->playerDead)
-	{
-		Super::Fire();
-	}
 }

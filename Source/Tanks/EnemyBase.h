@@ -19,15 +19,22 @@ public:
 
 	void HandleActorDied();
 
+	void Fire();
+
 protected:
 	virtual void BeginPlay() override;
 
+	bool TargetInRange(float value);
+
 	class APlayerTank* playerTank;
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	float attackDistance;
+
+private:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	float fireRate = 2.5f;
-
-	bool TargetInRange(float value);
 
 	FTimerHandle fireTimerHandle;
 };
