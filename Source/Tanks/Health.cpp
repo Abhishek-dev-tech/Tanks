@@ -35,4 +35,9 @@ void UHealth::TakeDamage(AActor* damagedActor, float damage, const UDamageType* 
 		tankGameMode->ActorDied(damagedActor);
 }
 
+float UHealth::GetHealth() const
+{
+	return health / maxHealth;
+}
+
 

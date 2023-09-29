@@ -11,6 +11,8 @@ void ATanksGameModeBase::BeginPlay()
     Super::BeginPlay();
 
    playerTank =  Cast<APlayerTank>(UGameplayStatics::GetPlayerPawn(this, 0));
+
+   StartGame();
 }
 
 void ATanksGameModeBase::ActorDied(AActor* actor)

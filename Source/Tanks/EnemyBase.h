@@ -29,7 +29,7 @@ protected:
 	class APlayerTank* playerTank;
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
-	float attackDistance;
+	float attackRange;
 
 private:
 

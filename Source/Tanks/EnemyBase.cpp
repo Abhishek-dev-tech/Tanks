@@ -36,7 +36,7 @@ bool AEnemyBase::TargetInRange(float value)
 
 void AEnemyBase::Fire()
 {
-	if (TargetInRange(attackDistance) && !playerTank->playerDead)
+	if (TargetInRange(attackRange) && !playerTank->playerDead)
 	{
 		Super::Fire();
 	}

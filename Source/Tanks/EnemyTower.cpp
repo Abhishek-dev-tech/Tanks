@@ -15,7 +15,7 @@ void AEnemyTower::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (TargetInRange(attackDistance))
+	if (TargetInRange(attackRange))
 		RotateTurret(playerTank->GetActorLocation(), DeltaTime);
 	
 }

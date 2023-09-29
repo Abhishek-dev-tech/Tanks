@@ -2,7 +2,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Base.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -10,7 +10,23 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Base.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
+			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\EnemyBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
+			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\EnemyBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -18,7 +34,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\EnemyTank.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -26,7 +42,23 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\EnemyTank.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
+			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\EnemyTower.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
+			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\EnemyTower.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -34,7 +66,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Health.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -42,7 +74,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Health.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -50,7 +82,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\PlayerTank.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -58,7 +90,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\PlayerTank.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -66,7 +98,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Projectile.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -74,7 +106,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Projectile.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -82,7 +114,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Tanks.Build.cs",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -90,7 +122,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Tanks.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -98,7 +130,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\Tanks.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -106,7 +138,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\TanksGameModeBase.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
@@ -114,7 +146,7 @@
 	{
 		"file": "D:\\UnrealProjects\\Tanks\\Source\\Tanks\\TanksGameModeBase.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe",
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe",
 			"@D:\\UnrealProjects\\Tanks\\.vscode\\compileCommands_Tanks\\Tanks.255.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"

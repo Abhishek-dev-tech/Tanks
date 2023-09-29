@@ -23,7 +23,7 @@ void AEnemyTank::Move(const FVector target, float deltaTime)
 {
 	RotateTurret(playerTank->GetActorLocation(), deltaTime);
 
-	if (TargetInRange(attackDistance))
+	if (TargetInRange(attackRange))
 		return;
 	
 	FVector direction = target - GetActorLocation();
