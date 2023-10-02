@@ -21,6 +21,11 @@ void AEnemyTank::Tick(float DeltaTime)
 
 void AEnemyTank::Move(const FVector target, float deltaTime)
 {
+	if (!TargetInRange(followDistance) && !follow)
+		return;
+
+	follow = true;
+
 	RotateTurret(playerTank->GetActorLocation(), deltaTime);
 
 	if (TargetInRange(attackRange))
@@ -50,6 +55,6 @@ void AEnemyTank::Rotate(const FVector target, float deltaTime)
 		GetActorRotation(),
 		deltaRotation,
 		deltaTime,
-		20.f
+		10.f
 	));
 }

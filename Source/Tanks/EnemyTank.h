@@ -28,4 +28,10 @@ private:
 
 	UFUNCTION()
 	void Rotate(const FVector target, float deltaTime);
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	float followDistance;
+
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	bool follow;
 };
