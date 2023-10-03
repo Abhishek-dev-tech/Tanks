@@ -59,7 +59,7 @@ void ABase::RotateTurret(const FVector target, float deltaTime)
 
 void ABase::Fire()
 {
-	turretMesh->SetWorldScale3D(FVector(1.175f, 1.175f, 1.f));
+	turretMesh->SetWorldScale3D(FVector(1.25f, 1.25f, 1.f));
 
 	AProjectile *tempProjectile = GetWorld()->SpawnActor<AProjectile>(projectile, projectileSpawnPoint->GetComponentLocation(), projectileSpawnPoint->GetComponentRotation());
 
@@ -72,7 +72,7 @@ void ABase::SetScaleSmoothly(FVector value, float deltaTime)
 		turretMesh->GetComponentScale(),
 		value,
 		deltaTime,
-		15.f
+		10.f
 	));
 }
 

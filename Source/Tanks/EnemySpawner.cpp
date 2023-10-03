@@ -34,8 +34,10 @@ void AEnemySpawner::Tick(float DeltaTime)
 
 void AEnemySpawner::SpawnEnemies()
 {
-	if(playerTank->playerDead)
+	if(playerTank->playerDead || enemyCount >= maxEnemies)
 		return;
+
+	enemyCount++;
 
 	FVector randSpawnLocation = GetSpawnLocation();
 
