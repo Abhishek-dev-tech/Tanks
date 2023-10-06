@@ -28,9 +28,6 @@ public:
 private:
 
 	UPROPERTY(EditAnywhere, Category = "Spawn")
-	float maxEnemies;
-
-	UPROPERTY(EditAnywhere, Category = "Spawn")
 	float enemySpawnDelay;
 
 	UPROPERTY(EditAnywhere, Category = "Spawn")
@@ -54,4 +51,5 @@ private:
 
 	FVector GetSpawnLocation();
 
+	class ATanksGameModeBase *tankGameMode;
 };

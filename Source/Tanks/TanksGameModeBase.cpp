@@ -11,11 +11,15 @@ void ATanksGameModeBase::BeginPlay()
 {
     Super::BeginPlay();
 
-   playerTank =  Cast<APlayerTank>(UGameplayStatics::GetPlayerPawn(this, 0));
+    playerTank =  Cast<APlayerTank>(UGameplayStatics::GetPlayerPawn(this, 0));
 
-   StartGame();
+    StartGame();
 
-   score = 0;
+    score = 0;
+
+    playerTank->DisableInput(playerTank->GetTankPlayerController());
+
+    isGameStarted = false;
 }
 
 void ATanksGameModeBase::ActorDied(AActor* actor)
@@ -24,12 +28,12 @@ void ATanksGameModeBase::ActorDied(AActor* actor)
     {
         playerTank->HandleActorDied();
         playerTank->DisableInput(playerTank->GetTankPlayerController());
-        playerTank->GetTankPlayerController()->bShowMouseCursor = false;
+        playerTank->GetTankPlayerController()->bShowMouseCursor = true;
+        GameOver();
     }
     else if(AEnemyBase* enemy = Cast<AEnemyBase>(actor))
     {
         enemy->HandleActorDied();
-        enemySpawner->enemyCount --;
         score += 100;
     }
 }
@@ -39,7 +43,12 @@ FString ATanksGameModeBase::GetScore() const
     return FString::Printf(TEXT("Score: %d"), score);
 }
 
-void ATanksGameModeBase::SetEnemySpawner(AEnemySpawner *_enemySpawner)
+void ATanksGameModeBase::Playing()
 {
-    enemySpawner = _enemySpawner;
+    StartPlaying();
+
+    playerTank->EnableInput(playerTank->GetTankPlayerController());
+    playerTank->GetTankPlayerController()->bShowMouseCursor = false;
+
+    isGameStarted = true;
 }

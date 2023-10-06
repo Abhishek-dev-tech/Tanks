@@ -21,19 +21,28 @@ public:
 	UFUNCTION(BlueprintPure)
 	FString GetScore() const;
 
+	UFUNCTION(BlueprintCallable)
+	void Playing();
+
+	bool IsGameStarted() { return isGameStarted; }
+
 protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void StartGame();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void StartPlaying();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void GameOver();
+
 private:
-	class AEnemySpawner *enemySpawner;
 
 	class APlayerTank *playerTank;
 
 	int score;
 
-	UFUNCTION(BlueprintCallable)
-	void SetEnemySpawner(AEnemySpawner *_enemySpawner);
+	bool isGameStarted;
 };

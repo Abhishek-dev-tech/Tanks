@@ -6,6 +6,7 @@
 #include "PlayerTank.h"
 #include "EnemyTank.h"
 #include "EnemyTower.h"
+#include "TanksGameModeBase.h"
 
 
 // Sets default values
@@ -23,6 +24,8 @@ void AEnemySpawner::BeginPlay()
 	GetWorldTimerManager().SetTimer(spawnTimerHandle, this, &AEnemySpawner::SpawnEnemies, enemySpawnDelay, true);
 
 	playerTank = Cast<APlayerTank>(UGameplayStatics::GetPlayerPawn(this, 0));
+
+	tankGameMode = Cast<ATanksGameModeBase>(UGameplayStatics::GetGameMode(this));
 }
 
 // Called every frame
@@ -34,7 +37,7 @@ void AEnemySpawner::Tick(float DeltaTime)
 
 void AEnemySpawner::SpawnEnemies()
 {
-	if(playerTank->playerDead || enemyCount >= maxEnemies)
+	if(playerTank->playerDead || !tankGameMode->IsGameStarted())
 		return;
 
 	enemyCount++;

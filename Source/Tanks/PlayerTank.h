@@ -72,5 +72,7 @@ private:
 
 	APlayerController *tankPlayerController;
 
+	class ATanksGameModeBase *tankGameMode;
+
 	FVector moveVector;
 };

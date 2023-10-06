@@ -8,6 +8,7 @@
 #include "EnhancedInputComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
+#include "TanksGameModeBase.h"
 
 // Sets default values
 APlayerTank::APlayerTank()
@@ -34,6 +35,8 @@ void APlayerTank::BeginPlay()
 	subSystem->AddMappingContext(playerMappingContext, 0);
 
 	tankPlayerController = _playerController;
+
+	tankGameMode = Cast<ATanksGameModeBase>(UGameplayStatics::GetGameMode(this));
 }
 
 
@@ -42,19 +45,21 @@ void APlayerTank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if(tankPlayerController)
-	{
-		FHitResult hitResult;
-		tankPlayerController->GetHitResultUnderCursor(
-			ECollisionChannel::ECC_Visibility,
-			false,
-			hitResult
-		);
+	if(!tankPlayerController)
+		return;
+	
+	FHitResult hitResult;
+	tankPlayerController->GetHitResultUnderCursor(
+		ECollisionChannel::ECC_Visibility,
+		false,
+		hitResult
+	);
 
-		DrawDebugSphere(GetWorld(), hitResult.ImpactPoint, 5, 8, FColor::Black, false, -1.f);
+	if(!tankGameMode->IsGameStarted())
+		return;
 
-		RotateTurret(hitResult.ImpactPoint, DeltaTime);
-	}
+	DrawDebugSphere(GetWorld(), hitResult.ImpactPoint, 5, 8, FColor::Black, false, -1.f);
+	RotateTurret(hitResult.ImpactPoint, DeltaTime);
 }
 
 // Called to bind functionality to input
