@@ -60,6 +60,8 @@ void APlayerTank::Tick(float DeltaTime)
 
 	DrawDebugSphere(GetWorld(), hitResult.ImpactPoint, 5, 8, FColor::Black, false, -1.f);
 	RotateTurret(hitResult.ImpactPoint, DeltaTime);
+
+	SetCamera();
 }
 
 // Called to bind functionality to input
@@ -111,4 +113,26 @@ void APlayerTank::HandleActorDied()
 	SetActorTickEnabled(false);
 
 	playerDead = true;
+}
+
+void APlayerTank::SetCamera()
+{
+	FVector targetLocation(0, 0, 15.f);
+	FRotator targetRotation(-30, 0, 0);
+
+	springArm->SetRelativeLocation(FMath::VInterpTo(
+		springArm->GetRelativeLocation(),
+		targetLocation,
+		UGameplayStatics::GetWorldDeltaSeconds(this),
+		7.5f
+	));
+	
+	springArm->SetRelativeRotation(FMath::RInterpTo(
+		springArm->GetRelativeRotation(),
+		targetRotation,
+		UGameplayStatics::GetWorldDeltaSeconds(this),
+		7.5f
+	));
+
+	springArm->TargetArmLength = 2500;
 }

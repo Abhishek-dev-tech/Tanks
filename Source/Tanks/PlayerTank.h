@@ -65,6 +65,9 @@ private:
 	void Rotate();
 
 	UFUNCTION()
+	void SetCamera();
+
+	UFUNCTION()
 	void ResetInputValues(const FInputActionValue &value);
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
